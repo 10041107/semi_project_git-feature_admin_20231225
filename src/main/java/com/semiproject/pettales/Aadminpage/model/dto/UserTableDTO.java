@@ -15,15 +15,10 @@ public class UserTableDTO {
     private Date registDate;
     private Date updateDate;
 
-    // 기본 생성자
     public UserTableDTO() {
-        // 기본 생성자의 내용
     }
 
-    // 모든 필드를 매개변수로 받는 생성자
-    public UserTableDTO(int userCode, String userNickname, String userEmail, String userPassword,
-                        String userStatus, String userAuth, String petCodeList, String companyCodeList,
-                        Date registDate, Date updateDate) {
+    public UserTableDTO(int userCode, String userNickname, String userEmail, String userPassword, String userStatus, String userAuth, String petCodeList, String companyCodeList, Date registDate, Date updateDate) {
         this.userCode = userCode;
         this.userNickname = userNickname;
         this.userEmail = userEmail;

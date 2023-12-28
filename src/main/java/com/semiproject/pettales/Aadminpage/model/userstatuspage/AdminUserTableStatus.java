@@ -1,6 +1,8 @@
 package com.semiproject.pettales.Aadminpage.model.userstatuspage;
 
 import jakarta.persistence.*;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.Date;
 
 @Entity
@@ -37,9 +39,9 @@ public class AdminUserTableStatus {
     @Column(name = "UPDATE_DATE")
     private Date updateDate;
 
+
     public AdminUserTableStatus() {
     }
-
 
     public AdminUserTableStatus(int userCode, String userNickname, String userEmail, String userPassword, String userStatus, String userAuth, String petCodeList, String companyCodeList, Date registDate, Date updateDate) {
         this.userCode = userCode;
@@ -148,13 +150,5 @@ public class AdminUserTableStatus {
                 ", registDate=" + registDate +
                 ", updateDate=" + updateDate +
                 '}';
-    }
-
-    public String getPassword() {
-        return this.userPassword;
-    }
-
-    public void setPassword(String encodedPassword) {
-        this.userPassword = encodedPassword;
     }
 }

@@ -8,17 +8,15 @@ package com.semiproject.pettales.Aadminpage.model.userstatuspage;
 
 import com.semiproject.pettales.Aadminpage.model.dto.UserTableDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Service
 public class AdminUserTableStatusService {
 
@@ -138,4 +136,5 @@ public class AdminUserTableStatusService {
         AdminUserTableStatus newAdminUserTableStatus = adminUserTableStatusRepository.save(adminUserTableStatus);
         return convertToDto(newAdminUserTableStatus);
     }
+
 }

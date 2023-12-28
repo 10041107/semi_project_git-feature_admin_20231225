@@ -7,15 +7,21 @@
 package com.semiproject.pettales.Aadminpage.model.userstatuspage;
 
 import com.semiproject.pettales.Aadminpage.model.dto.UserTableDTO;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
+import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/admin")
@@ -106,5 +112,7 @@ public class AdminUserTableStatusController {
         mv.setViewName("redirect:/admin/userstatus");
         return mv;
     }
+
+
 
 }
