@@ -7,7 +7,7 @@
 package com.semiproject.pettales.auth.model;
 
 
-import com.semiproject.pettales.user.model.dto.LoginUserDTO;
+import com.semiproject.pettales.company.user.model.dto.LoginUserDTO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

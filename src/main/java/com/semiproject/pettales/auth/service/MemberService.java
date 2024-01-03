@@ -1,8 +1,8 @@
 package com.semiproject.pettales.auth.service;
 
-import com.semiproject.pettales.user.dao.UserMapper;
-import com.semiproject.pettales.user.model.dto.LoginUserDTO;
-import com.semiproject.pettales.user.model.dto.SignupDTO;
+import com.semiproject.pettales.company.user.dao.UserMapper;
+import com.semiproject.pettales.company.user.model.dto.LoginUserDTO;
+import com.semiproject.pettales.company.user.model.dto.SignupDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

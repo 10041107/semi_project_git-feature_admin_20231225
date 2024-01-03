@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SemiProjectGitApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(SemiProjectGitApplication.class, args);
     }
-
 }

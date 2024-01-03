@@ -1,7 +1,7 @@
 package com.semiproject.pettales.auth.service;
 
 import com.semiproject.pettales.auth.model.AuthDetails;
-import com.semiproject.pettales.user.model.dto.LoginUserDTO;
+import com.semiproject.pettales.company.user.model.dto.LoginUserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

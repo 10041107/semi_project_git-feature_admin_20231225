@@ -1,9 +1,9 @@
 HELP.md
 .gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+../../../../semi_project_git-feature_admin_20231225/src/main/resources/semiproject.json
+
 
 ### STS ###
 .apt_generated

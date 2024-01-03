@@ -1,7 +1,7 @@
 package com.semiproject.pettales.auth.controller;
 
 import com.semiproject.pettales.auth.service.MemberService;
-import com.semiproject.pettales.user.model.dto.SignupDTO;
+import com.semiproject.pettales.company.user.model.dto.SignupDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
