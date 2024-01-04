@@ -26,13 +26,13 @@ public class PasswordChangeController {
     private PasswordEncoder passwordEncoder;
 
     // 사용자 비밀번호 변경 페이지를 반환하는 메서드입니다.
-    @GetMapping("/change-password")
+    @GetMapping("/mypage/changepass")
     public String changePassword() {
-        return "change-password";
+        return "mypage/changepass";
     }
 
     // 사용자 비밀번호를 변경하는 메서드입니다.
-    @PostMapping("/change-password")
+    @PostMapping("/mypage/changepass")
     public String updatePassword(HttpSession session, @RequestParam("oldPassword") String oldPassword, @RequestParam("newPassword") String newPassword, RedirectAttributes redirectAttributes) {
         int userCode = (int) session.getAttribute("USER_CODE");
 
@@ -50,7 +50,7 @@ public class PasswordChangeController {
             redirectAttributes.addFlashAttribute("success", "비밀번호가 성공적으로 변경되었습니다.");
         } else {
             // 현재 비밀번호와 입력한 이전 비밀번호가 일치하지 않으면 오류 메시지를 반환합니다.
-            redirectAttributes.addFlashAttribute("error", "현재 비밀번호가 일치하지 않습니다.");
+            redirectAttributes.addFlashAttribute("error", "비밀번호 확인이 일치하지 않습니다.");
         }
 
         return "redirect:/user/mypage";

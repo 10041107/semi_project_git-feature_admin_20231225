@@ -1,8 +1,8 @@
 package com.semiproject.pettales.AAmypage.doglistchange.service;
 
+import com.semiproject.pettales.AAmypage.doglistchange.entity.PetUpdate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.semiproject.pettales.AAmypage.doglistchange.entity.PetTable;
 import com.semiproject.pettales.AAmypage.doglistchange.repository.PetUpdateRepository;
 
 import java.util.List;
@@ -18,18 +18,18 @@ public class PetUpdateService {
         this.petUpdateRepository = petUpdateRepository;
     }
 
-    public PetTable createPet(PetTable pet) {
+    public PetUpdate createPet(PetUpdate pet) {
         return petUpdateRepository.save(pet);
     }
 
-    public List<PetTable> getPets() {
+    public List<PetUpdate> getPets() {
         return petUpdateRepository.findAll();
     }
 
-    public PetTable updatePet(int petCode, PetTable pet) {
-        Optional<PetTable> oldPet = petUpdateRepository.findById(petCode);
+    public PetUpdate updatePet(int petCode, PetUpdate pet) {
+        Optional<PetUpdate> oldPet = petUpdateRepository.findById(petCode);
         if(oldPet.isPresent()) {
-            PetTable updatedPet = oldPet.get();
+            PetUpdate updatedPet = oldPet.get();
             updatedPet.setPetName(pet.getPetName());
             updatedPet.setPetStatus(pet.getPetStatus());
             updatedPet.setPetSpecies(pet.getPetSpecies());

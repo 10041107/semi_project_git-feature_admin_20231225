@@ -30,7 +30,7 @@ import java.util.Date;
 
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/user/mypage")
 public class UserUpdateController {
 
     @Autowired
@@ -47,7 +47,7 @@ public class UserUpdateController {
         UserUpdate userUpdate = userUpdateService.findById(userCode).orElse(null);
         // 찾은 사용자 정보를 모델에 추가하여 뷰에 전달합니다.
         model.addAttribute("user", userUpdate);
-        return "profile";
+        return "mypage/profile";
     }
 
     // 사용자 프로필 정보를 업데이트하는 메서드입니다.
@@ -60,18 +60,18 @@ public class UserUpdateController {
             // 파일 확장자가 jpg 또는 png가 아니면 오류 메시지를 반환합니다.
             if (!extension.equals("jpg") && !extension.equals("png")) {
                 redirectAttributes.addFlashAttribute("error", "프로필 이미지는 jpg 또는 png 파일만 가능합니다.");
-                return "redirect:/user/mypage";
+                return "redirect:/user/mypage/profile";
             }
             // 파일 크기가 5MB를 초과하면 오류 메시지를 반환합니다.
             if (file.getSize() > 5 * 1024 * 1024) { // 5MB 제한
                 redirectAttributes.addFlashAttribute("error", "프로필 이미지는 5MB 이내의 파일만 가능합니다.");
-                return "redirect:/user/mypage";
+                return "redirect:/user/mypage/profile";
             }
             // 이미지의 가로 또는 세로가 500px을 초과하면 오류 메시지를 반환합니다.
             BufferedImage image = ImageIO.read(file.getInputStream());
             if (image.getWidth() > 500 || image.getHeight() > 500) {
                 redirectAttributes.addFlashAttribute("error", "프로필 이미지는 500x500 픽셀 이내의 이미지만 가능합니다.");
-                return "redirect:/user/mypage";
+                return "redirect:/user/mypage/profile";
             }
             // 파일의 원래 이름을 가져옵니다.
             String originalFilename = file.getOriginalFilename();
@@ -99,18 +99,18 @@ public class UserUpdateController {
         userUpdate.setUpdateDate(new Date());
         // 사용자 정보를 업데이트합니다.
         userUpdateService.save(userUpdate);
-        return "redirect:/user/mypage";
+        return "redirect:/user/mypage/profile";
     }
 
     // 사용자 정보를 삭제하는 메서드입니다.
-    @PostMapping("/delete")
+    @PostMapping("/profile/delete")
     public String deleteUser(HttpSession session) {
         int userCode = (int) session.getAttribute("USER_CODE");
         // 세션에서 사용자 코드를 가져와서 해당 사용자의 정보를 삭제합니다.
         userUpdateService.deleteById(userCode);
         // 세션을 무효화하여 로그아웃 상태로 만듭니다.
         session.invalidate();
-        return "redirect:/";
+        return "redirect:/"; // 메인으로 돌아감
     }
 }
 
